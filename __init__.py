@@ -318,6 +318,12 @@ class TimeSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder("").require("Query").require("Time").
                     optionally("Location"))
+    #@intent_handler decorator has three parameters; two are required and one is optional
+    #This call is then interpreted by the Adapt Intent Parser.
+    #Adapt will look in .voc files to try and register an Intent.
+    #in the vocab directory, you will see several .voc files. Note that they each correspond 
+    #to one of the parameters passed to Intentbuilder().
+    
     def handle_query_time(self, message):
         utt = message.data.get('utterance', "")
         location = self._extract_location(utt)
