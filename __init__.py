@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import datetime
-import re
+import re #For regular expressions
 import pytz
 import time
 import tzlocal
